@@ -1,0 +1,75 @@
+Please make the following UI/UX improvements to the MediaPhiles website:
+
+1. HERO SECTION IMPROVEMENTS
+
+Current Issue:
+The hero section text does not stand out enough against the background image. The background image is visually too dominant, making the headline and subheadline harder to read.
+
+Required Fixes:
+
+- Reduce the visual intensity of the hero background image by 30–40%.
+- Add a dark overlay (black or dark charcoal) with approximately 55–70% opacity.
+- Increase contrast between text and background.
+- Make the headline significantly more prominent.
+- Increase font weight of the headline.
+- Add subtle text shadow or backdrop blur behind text if necessary.
+- Ensure readability on both desktop and mobile.
+- The hero section should immediately draw attention to the message, not the image.
+
+Desired Feel:
+Luxury hospitality brand website similar to Aman Resorts, Six Senses, or Four Seasons.
+
+The hierarchy should be:
+
+1. Headline
+2. Subheadline
+3. CTA Buttons
+4. Background Image
+
+Not the other way around.
+
+------------------------------------------------
+
+2. PROCESS SECTION FIX
+
+Current Issue:
+One of the process steps is missing a connecting arrow, causing the flow to feel broken and incomplete.
+
+Required Fixes:
+
+Ensure every step is connected visually.
+
+Business Audit
+↓
+Content Strategy
+↓
+Content Creation
+↓
+Lead Management
+↓
+Performance Analysis
+
+All arrows should be aligned consistently and visible on desktop, tablet, and mobile.
+
+The section should clearly communicate a continuous journey.
+
+------------------------------------------------
+
+3. GENERAL LUXURY IMPROVEMENTS
+
+Please review the entire website and improve visual hierarchy wherever necessary.
+
+Focus on:
+
+- Better readability
+- Stronger typography hierarchy
+- More whitespace around important content
+- Consistent spacing between sections
+- Premium luxury feel
+- Elegant animations only
+- Avoid overly loud imagery
+- Prioritize content clarity over visual effects
+
+The website should feel like a premium hospitality brand worth millions, not a marketing agency template.
+
+Every section should guide the visitor naturally toward booking a discovery call.
