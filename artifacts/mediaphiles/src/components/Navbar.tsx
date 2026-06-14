@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import logoLight from "@/assets/logo-light.svg";  // shown on transparent hero
+import logoDark  from "@/assets/logo-dark.svg";   // shown after scroll
+
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,9 +37,19 @@ export function Navbar() {
             isScrolled ? "text-foreground" : "text-white"
           }`}
         >
-          MediaPhiles
+          <a
+            href="#home"
+            onClick={(e) => { e.preventDefault(); scrollTo("home"); }}
+            className="block"
+            aria-label="MediaPhiles — home"
+          >
+            <img
+              src={isScrolled ? logoDark : logoLight}
+              alt="MediaPhiles"
+              className="h-50 md:h-60 w-auto transition-opacity"
+            />
+          </a>
         </a>
-
         <div className="hidden md:flex items-center gap-8">
           {["Services", "Case Studies", "Process", "Contact"].map((item) => (
             <a
