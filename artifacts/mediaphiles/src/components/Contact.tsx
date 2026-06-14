@@ -4,6 +4,19 @@ import { MapPin, Phone, Mail, Globe, Instagram } from "lucide-react";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
+// Google Form: Hotel Growth Discovery Form
+const GOOGLE_FORM_ACTION =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdHmNXLZJI7fgrb0jJ6WFxkKL_mu6JVs-miOoOq-6Evs-a3Hw/formResponse";
+
+const GOOGLE_FORM_FIELDS = {
+  name: "entry.2092238618",
+  email: "entry.1556369182",
+  phone: "entry.479301265",
+  property: "entry.1537371043",
+  location: "entry.432850524",
+  message: "entry.1414441701",
+} as const;
+
 export function Contact() {
   const [formState, setFormState] = useState<FormState>("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -13,31 +26,33 @@ export function Contact() {
     setFormState("submitting");
     setErrorMsg("");
 
-    const formData = new FormData(e.currentTarget);
-    const payload = {
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      phone: formData.get("phone") as string,
-      propertyName: formData.get("property") as string,
-      propertyLocation: formData.get("location") as string,
-      message: formData.get("message") as string,
-    };
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const params = new URLSearchParams();
+    params.append(GOOGLE_FORM_FIELDS.name,     (formData.get("name")     as string) ?? "");
+    params.append(GOOGLE_FORM_FIELDS.email,    (formData.get("email")    as string) ?? "");
+    params.append(GOOGLE_FORM_FIELDS.phone,    (formData.get("phone")    as string) ?? "");
+    params.append(GOOGLE_FORM_FIELDS.property, (formData.get("property") as string) ?? "");
+    params.append(GOOGLE_FORM_FIELDS.location, (formData.get("location") as string) ?? "");
+    params.append(GOOGLE_FORM_FIELDS.message,  (formData.get("message")  as string) ?? "");
 
     try {
-      const res = await fetch("/api/inquiries", {
+      // Google Forms doesn't return CORS headers, so we submit with no-cors.
+      // The browser cannot read the response, but the submission DOES go through.
+      await fetch(GOOGLE_FORM_ACTION, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
       });
 
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body?.error ?? "Something went wrong. Please try again.");
-      }
-
       setFormState("success");
+      form.reset();
     } catch (err) {
-      setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
+      setErrorMsg(
+        err instanceof Error ? err.message : "Something went wrong. Please try again."
+      );
       setFormState("error");
     }
   };
