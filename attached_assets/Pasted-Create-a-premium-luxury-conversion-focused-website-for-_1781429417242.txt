@@ -1,0 +1,235 @@
+Create a premium, luxury, conversion-focused website for a hospitality marketing agency called "MediaPhiles".
+
+The agency helps boutique hotels, resorts, retreats, villas, and homestays attract more travelers, generate guest inquiries, and increase direct bookings through storytelling-driven marketing.
+
+The website should feel like a luxury hospitality brand, not a typical marketing agency.
+
+Design Inspiration:
+- Aman Resorts
+- Six Senses
+- The Postcard Hotels
+- SaffronStays
+- Airbnb Luxe
+- Four Seasons
+
+Style:
+- Elegant
+- Minimalist
+- Premium
+- Sophisticated
+- Modern
+- Luxury hospitality aesthetic
+
+Color Palette:
+- Off White (#F8F5F0)
+- Beige (#E8DFC8)
+- Dark Charcoal (#1F1F1F)
+- Deep Forest Green (#2F4F4F)
+- Gold accents
+
+Typography:
+- Playfair Display for headings
+- Montserrat for body text
+
+Website Goal:
+Generate discovery calls from hotel owners and hospitality brands.
+
+Navigation:
+- Home
+- Services
+- Case Studies
+- Process
+- Contact
+
+------------------------------------------------
+
+HERO SECTION
+
+Headline:
+
+Helping Boutique Hotels Turn Attention Into Bookings
+
+Subheadline:
+
+Storytelling-driven marketing for hotels, retreats, resorts, villas, and homestays.
+
+CTA Buttons:
+
+Book a Discovery Call
+
+View Case Studies
+
+Background:
+Luxury hotel imagery with subtle animations.
+
+------------------------------------------------
+
+PROBLEM SECTION
+
+Headline:
+
+Beautiful Properties Deserve Better Marketing
+
+Hotels often struggle with:
+
+- Generic content
+- Low engagement
+- Booking Platform Dependency
+- Weak brand positioning
+- Limited direct inquiries
+
+We help hospitality brands stand out through strategic storytelling and guest-focused marketing.
+
+------------------------------------------------
+
+SERVICES SECTION
+
+Headline:
+
+Hospitality Growth Services
+
+Service Cards:
+
+1. Brand Positioning
+Define what makes your property unique.
+
+2. Content Creation
+Reels, photography, stories, and visual storytelling.
+
+3. Social Media Management
+Consistent content and audience engagement.
+
+4. Lead Generation
+Turn visibility into guest inquiries.
+
+5. WhatsApp Automation
+Capture and nurture guest leads automatically.
+
+6. Review Generation
+Build trust through guest reviews.
+
+7. Direct Booking Optimisation
+Reduce Booking Platform Dependency and improve direct bookings.
+
+------------------------------------------------
+
+CASE STUDIES SECTION
+
+Headline:
+
+Properties We've Worked With
+
+Show premium cards for:
+
+Fredy's Bungalow
+- 7,545+ Reel Views
+- 8,790+ Carousel Views
+
+Itmenaan Estate
+- 4,570+ Reel Views
+
+Mulberry House Kasar
+- 3,901+ Reel Views
+
+Golden Pines Retreat
+- 3,118+ Reel Views
+
+Each card should include:
+- Property image
+- Brief story angle
+- Results
+
+CTA:
+View Full Portfolio: upload attached PDF to this link
+
+------------------------------------------------
+
+PROCESS SECTION
+
+Headline:
+
+Our Hotel Growth Framework
+
+Visual Flow:
+
+Business Audit - Identifying your audience and business goals
+↓
+Content Strategy - Creating a content and positioning roadmap
+↓
+Content Creation - Producing visuals and storytelling driven content
+↓
+Lead Management - Managing and guest inquiries through AI automation
+↓
+Performance Analysis - 
+
+Short description under each step.
+
+------------------------------------------------
+
+WHY MEDIAPHILES SECTION
+
+Headline:
+
+Why Hotels Choose MediaPhiles
+
+Cards:
+
+Hospitality Focus
+We work exclusively with hospitality brands. Every strategy is built around the unique rhythms of travel and guest experience.
+
+Travel Storytelling
+We don't just create content — we craft narratives that make travellers feel they must visit your property.
+
+Creator Perspective
+Our team thinks like travellers and creators, producing content that feels authentic, not promotional.
+
+Growth-Oriented
+Every piece of content, every campaign, every automation is designed with one goal: more direct bookings for you.
+
+------------------------------------------------
+
+FINAL CTA SECTION
+
+Headline:
+
+Let's Tell Your Story
+
+Subheadline:
+
+Whether you're a boutique hotel, retreat, resort, villa, or homestay, we help bring your story to life and attract more travellers.
+
+CTA Button:
+
+Book a Discovery Call
+
+------------------------------------------------
+
+CONTACT SECTION
+
+Phone Number
+
+Email Address
+
+Instagram
+
+Location
+
+Contact Form: ask for Full name, email, number, property name, location,  when anyone fills this form, we get the details emailed on “info@mediaphiles.in”
+
+------------------------------------------------
+
+Technical Requirements:
+
+- Fully responsive
+- Fast loading
+- Luxury animations
+- Smooth scrolling
+- SEO optimised
+- Modern glassmorphism and luxury hospitality styling
+- Mobile-first design
+- Premium image galleries
+- Built with clean modern UI/UX
+
+The website should feel like a luxury hospitality brand worth millions, not a traditional marketing agency.  
+
+

@@ -1,0 +1,32 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "rXsDjCk7xr_zfB9lQ-JWz"
+uri = "file://artifacts/mediaphiles/public/hero-bg.png"
+type = "image"
+title = "Lush hillside resort at golden hour"
+
+[[generated]]
+id = "3hg34ozvObetBttO6Q6QS"
+uri = "file://artifacts/mediaphiles/public/fredys.png"
+type = "image"
+title = "Heritage mountain bungalow"
+
+[[generated]]
+id = "UXBrsS8xNaM8iBuHOimJ7"
+uri = "file://artifacts/mediaphiles/public/itmenaan.png"
+type = "image"
+title = "Stone cottages Himalayan views"
+
+[[generated]]
+id = "oNKcXjKEvzgJS2EjIJ152"
+uri = "file://artifacts/mediaphiles/public/mulberry.png"
+type = "image"
+title = "Mountain calm slow living"
+
+[[generated]]
+id = "oAAnBVORXNIaNNjPak-B-"
+uri = "file://artifacts/mediaphiles/public/golden-pines.png"
+type = "image"
+title = "Serene mountain retreat"
