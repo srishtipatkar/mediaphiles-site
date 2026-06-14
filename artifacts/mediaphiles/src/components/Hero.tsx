@@ -30,11 +30,11 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          Helping Boutique Hotels Turn Attention Into Bookings
+          A Great Stay Deserves Great Storytelling
         </motion.h1>
 
         <motion.div
-          className="w-16 h-[1px] bg-[#C9A84C] mx-auto mt-10 mb-10"
+          className="w-116 h-[1px] bg-[#C9A84C] mx-auto mt-10 mb-10"
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -70,16 +70,6 @@ export function Hero() {
           </a>
         </motion.div>
       </div>
-
-      <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-      >
-        <span className="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
-        <div className="w-[1px] h-8 bg-white/30" />
-      </motion.div>
     </section>
   );
 }
