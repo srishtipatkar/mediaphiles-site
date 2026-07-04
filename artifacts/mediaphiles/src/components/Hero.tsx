@@ -60,7 +60,7 @@ export function Hero() {
             href="#contact"
             className="px-10 py-4 bg-[#C9A84C] border border-[#C9A84C] text-white hover:bg-[#b8963e] hover:border-[#b8963e] transition-all duration-300 text-xs font-semibold tracking-[0.2em] uppercase"
           >
-            Book a Discovery Call
+            Request Free Audit
           </a>
           <a
             href="#case-studies"

@@ -75,7 +75,7 @@ export function Navbar() {
                 : "border-white/50 text-white hover:border-accent hover:text-accent hover:bg-black/20"
             }`}
           >
-            Book a Discovery Call
+            Request Free Audit
           </a>
         </div>
       </div>

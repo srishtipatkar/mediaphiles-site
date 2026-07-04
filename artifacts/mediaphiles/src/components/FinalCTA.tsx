@@ -40,7 +40,7 @@ export function FinalCTA() {
             href="#contact"
             className="inline-block px-10 py-5 bg-transparent border border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300 text-sm font-medium tracking-widest uppercase"
           >
-            Book a Discovery Call
+            Request Free Audit
           </a>
         </motion.div>
       </div>
