@@ -256,6 +256,12 @@
   }
 }
 
+@layer components {
+  .contact-input {
+    @apply w-full border-0 border-b border-[#D6C3A5] bg-transparent py-3 text-[#111111] outline-none transition-colors placeholder:text-[#111111]/30 focus:border-[#D96C2F] disabled:opacity-50;
+  }
+}
+
 /**
  * Using the elevate system.
  * Automatic contrast adjustment.
