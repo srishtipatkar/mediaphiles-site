@@ -136,9 +136,17 @@ export function InstagramAuditForm() {
               <h3 className="mb-3 text-2xl font-semibold text-[#3A3E61] sm:text-3xl">
                 Thank you!
               </h3>
-              <p className="text-[#3A3E61]/70">
+              <p className="mb-6 text-[#3A3E61]/70">
                 We've received your details and will get back to you soon.
               </p>
+              <a
+                href="https://calendly.com/mediaphiles-marketing/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#C9A84C] px-8 py-3 text-xs font-bold uppercase tracking-[0.2em] text-[#3A3E61] shadow-[0_10px_28px_rgba(201,168,76,0.4)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(201,168,76,0.5)]"
+              >
+                Book Your Call Now
+              </a>
             </div>
           ) : (
             <Form {...form}>
