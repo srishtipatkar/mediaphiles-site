@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { EASE_OUT } from "@/lib/motion";
 
 export function CaseStudies() {
   const cases = [
     {
       title: "Fredy's Bungalow",
-      image: "/fredys.png",
+      image: "/fredys2.jpg",
       stats: [
         "7,545+ Reel Views · 79 Saves · 87 Shares",
         "8,790+ Carousel Views · 14 Saves · 11 Shares"
@@ -30,7 +31,7 @@ export function CaseStudies() {
     },
     {
       title: "Golden Pines Retreat",
-      image: "/golden-pines.png",
+      image: "/golden-pines2.png",
       stats: [
         "3,118+ Reel Views · 14 Saves · 21 Shares",
         "3,049+ Carousel Views"
@@ -40,7 +41,7 @@ export function CaseStudies() {
   ];
 
   return (
-    <section id="case-studies" className="py-24 bg-white">
+    <section id="case-studies" className="py-24 bg-[#F7F4EE]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.h2 
@@ -65,19 +66,19 @@ export function CaseStudies() {
           {cases.map((study, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 36 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group cursor-pointer"
+              transition={{ duration: 0.9, delay: index * 0.15, ease: EASE_OUT }}
+              className="group"
             >
-              <div className="relative overflow-hidden aspect-[4/3] mb-6">
-                <img 
-                  src={study.image} 
-                  alt={study.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              <div className="relative overflow-hidden aspect-[4/3] mb-6 bg-[#3A3E61]">
+                <img
+                  src={study.image}
+                  alt={study.title}
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="absolute inset-0 bg-[#3A3E61]/20 group-hover:bg-transparent transition-colors duration-500" />
               </div>
               <h3 className="font-serif text-2xl text-foreground mb-3">{study.title}</h3>
               <p className="text-accent font-medium text-sm mb-4 uppercase tracking-wider">{study.story}</p>

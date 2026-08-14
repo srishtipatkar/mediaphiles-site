@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Compass, PenTool, Smartphone, Target, MessageCircle, Star, MousePointerClick, RefreshCw } from "lucide-react";
+import { EASE_OUT, cardHover } from "@/lib/motion";
 
 const services = [
   {
@@ -53,13 +54,13 @@ const containerVariants = {
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  hidden: { opacity: 0, y: 28, scale: 0.97 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.7, ease: EASE_OUT } }
 };
 
 export function Services() {
   return (
-    <section id="services" className="py-28 bg-[#F8F5F0]">
+    <section id="services" className="py-28 bg-[#F7F4EE]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <motion.p
@@ -100,13 +101,14 @@ export function Services() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="p-8 border border-[#E8DFC8] bg-white hover:border-[#C9A84C]/50 hover:shadow-md transition-all duration-400 group flex flex-col items-start text-left"
+              whileHover={cardHover}
+              className="p-8 border border-[#C9A84C]/25 bg-[#FFFEFB] hover:border-[#C9A84C]/70 hover:shadow-[0_18px_45px_rgba(18,53,36,0.08)] transition-[border-color,box-shadow] duration-400 group flex flex-col items-start text-left"
             >
-              <div className="text-[#C9A84C] mb-6 bg-[#C9A84C]/10 p-3.5 group-hover:bg-[#C9A84C] group-hover:text-white transition-all duration-400">
+              <div className="text-[#C9A84C] mb-6 bg-[#C9A84C]/10 p-3.5 group-hover:bg-[#C9A84C] group-hover:text-[#3A3E61] transition-all duration-400">
                 {service.icon}
               </div>
-              <h3 className="text-base font-semibold mb-3 text-[#1F1F1F] leading-snug">{service.title}</h3>
-              <p className="text-[#1F1F1F]/60 font-light text-sm leading-relaxed">{service.description}</p>
+              <h3 className="text-base font-semibold mb-3 text-[#3A3E61] leading-snug">{service.title}</h3>
+              <p className="text-[#3A3E61]/60 font-light text-sm leading-relaxed">{service.description}</p>
             </motion.div>
           ))}
         </motion.div>

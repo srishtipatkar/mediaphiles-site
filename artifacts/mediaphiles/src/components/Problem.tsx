@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { EASE_OUT } from "@/lib/motion";
 
 const struggles = [
   {
@@ -28,10 +29,10 @@ export function Problem() {
     <section className="py-28 bg-background">
       <div className="container mx-auto px-6 max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.9, ease: EASE_OUT }}
           className="text-center mb-20"
         >
           <p className="text-xs tracking-[0.25em] uppercase text-[#C9A84C] mb-5 font-medium">The Problem</p>
@@ -48,10 +49,11 @@ export function Problem() {
           {struggles.map((struggle, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: index * 0.08 }}
+              transition={{ duration: 0.7, delay: index * 0.08, ease: EASE_OUT }}
+              whileHover={{ x: 6 }}
               className="pl-8 border-l-2 border-[#C9A84C]/30 relative hover:border-[#C9A84C]/70 transition-colors duration-300"
             >
               <div className="absolute w-2 h-2 rounded-full bg-[#C9A84C] -left-[5px] top-[6px]" />
@@ -65,11 +67,11 @@ export function Problem() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.9, delay: 0.2, ease: EASE_OUT }}
           className="mt-24 text-center"
         >
           <div className="w-16 h-[1px] bg-[#C9A84C]/40 mx-auto mb-10" />
-          <p className="font-serif text-2xl md:text-3xl text-[#2F4F4F] leading-relaxed italic max-w-2xl mx-auto">
+          <p className="font-serif text-2xl md:text-3xl text-[#3A3E61] leading-relaxed italic max-w-2xl mx-auto">
             "We help hospitality brands stand out through strategic storytelling and guest-focused marketing."
           </p>
         </motion.div>

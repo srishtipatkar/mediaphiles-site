@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { EASE_OUT, cardHover } from "@/lib/motion";
 
 const reasons = [
   {
@@ -25,7 +26,7 @@ const reasons = [
 
 export function WhyMediaPhiles() {
   return (
-    <section className="py-28 bg-[#F8F5F0]">
+    <section className="py-28 bg-[#F7F4EE]">
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
           <motion.p
@@ -59,11 +60,12 @@ export function WhyMediaPhiles() {
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-10 bg-white border border-[#E8DFC8] hover:border-[#C9A84C]/50 hover:shadow-md transition-all duration-400 relative overflow-hidden group"
+              transition={{ duration: 0.7, delay: index * 0.1, ease: EASE_OUT }}
+              whileHover={cardHover}
+              className="p-10 bg-[#FFFEFB] border border-[#C9A84C]/25 hover:border-[#C9A84C]/70 hover:shadow-[0_18px_45px_rgba(18,53,36,0.08)] transition-[border-color,box-shadow] duration-400 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#C9A84C]/5 rounded-bl-full translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700" />
               <div className="text-[#C9A84C]/15 font-serif text-7xl absolute top-4 right-6 leading-none select-none">
@@ -71,8 +73,8 @@ export function WhyMediaPhiles() {
               </div>
               <div className="relative z-10">
                 <div className="w-8 h-[1px] bg-[#C9A84C]/60 mb-6" />
-                <h3 className="text-xl font-semibold mb-4 text-[#1F1F1F]">{reason.title}</h3>
-                <p className="text-[#1F1F1F]/60 font-light leading-relaxed">{reason.description}</p>
+                <h3 className="text-xl font-semibold mb-4 text-[#3A3E61]">{reason.title}</h3>
+                <p className="text-[#3A3E61]/60 font-light leading-relaxed">{reason.description}</p>
               </div>
             </motion.div>
           ))}
