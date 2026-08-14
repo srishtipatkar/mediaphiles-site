@@ -62,14 +62,26 @@ type FormValues = z.infer<typeof formSchema>;
 const businessTypeLabel = (value: string) =>
   BUSINESS_TYPE_OPTIONS.find((o) => o.value === value)?.label ?? value;
 
+/** The live Google Form's "Instagram URL" question enforces URL-format validation server-side — a bare @handle is rejected with a 400. */
+function toInstagramUrl(value: string): string {
+  const trimmed = value.trim();
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  return `https://instagram.com/${trimmed.replace(/^@/, "")}`;
+}
+
+/** The live Google Form's "Contact Number" question enforces numeric-only validation server-side — "+", spaces, etc. are rejected with a 400. */
+function toPlainDigits(value: string): string {
+  return value.replace(/[^\d]/g, "");
+}
+
 function submitToGoogleForm(values: FormValues) {
   const params = new URLSearchParams();
   params.append(GOOGLE_FORM_FIELDS.name, values.name);
   params.append(GOOGLE_FORM_FIELDS.email, values.email);
-  params.append(GOOGLE_FORM_FIELDS.phone, values.phone);
+  params.append(GOOGLE_FORM_FIELDS.phone, toPlainDigits(values.phone));
   params.append(GOOGLE_FORM_FIELDS.property, values.businessName);
   params.append(GOOGLE_FORM_FIELDS.location, values.location);
-  params.append(GOOGLE_FORM_FIELDS.instagramUrl, values.instagramUrl);
+  params.append(GOOGLE_FORM_FIELDS.instagramUrl, toInstagramUrl(values.instagramUrl));
   params.append(GOOGLE_FORM_FIELDS.businessType, businessTypeLabel(values.businessType));
 
   // no-cors means we can't read the response either way — the success
