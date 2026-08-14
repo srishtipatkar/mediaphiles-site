@@ -136,8 +136,11 @@ export function InstagramAuditForm() {
               <h3 className="mb-3 text-2xl font-semibold text-[#3A3E61] sm:text-3xl">
                 Thank you!
               </h3>
+              <p className="mb-2 text-[#3A3E61]/70">
+                Ready to discuss your strategy?
+              </p>
               <p className="mb-6 text-[#3A3E61]/70">
-                Ready to discuss your strategy? Book a call with our team below.
+                Book a call with our team below.
               </p>
               <a
                 href="https://calendly.com/mediaphiles-marketing/30min"
