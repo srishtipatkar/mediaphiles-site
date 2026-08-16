@@ -184,16 +184,13 @@ function generateEmailHTML(name: string, businessName: string): string {
   `;
 }
 
-export default async function handler(
-  req: { method: string; body: string },
-  res: { status: (code: number) => { json: (data: unknown) => void } }
-) {
+export default async function handler(req: any, res: any) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    const data = JSON.parse(req.body);
+    const data = typeof req.body === "string" ? JSON.parse(req.body) : req.body;
 
     // Validate required fields
     if (!data.email || !data.name || !data.businessName) {
@@ -201,16 +198,22 @@ export default async function handler(
     }
 
     // Send email
-    const emailResponse = await resend.emails.send({
-      from: "MediaPhiles <noreply@mediaphiles.in>",
-      to: data.email,
-      subject: `Thanks for your interest! Here's your free Instagram audit request`,
-      html: generateEmailHTML(data.name, data.businessName),
-      replyTo: "info@mediaphiles.in",
-    });
+    try {
+      const emailResponse = await resend.emails.send({
+        from: "MediaPhiles <noreply@mediaphiles.in>",
+        to: data.email,
+        subject: `Thanks for your interest! Here's your free Instagram audit request`,
+        html: generateEmailHTML(data.name, data.businessName),
+        replyTo: "info@mediaphiles.in",
+      });
 
-    if (emailResponse.error) {
-      console.error("Email send error:", emailResponse.error);
+      if (emailResponse.error) {
+        console.error("Email send error:", emailResponse.error);
+      } else {
+        console.log("Email sent successfully to:", data.email);
+      }
+    } catch (emailError) {
+      console.error("Email exception:", emailError);
     }
 
     // Submit to Google Forms (fire-and-forget)
@@ -218,10 +221,10 @@ export default async function handler(
 
     return res.status(200).json({
       success: true,
-      message: "Submission received. Email sent successfully.",
+      message: "Submission received.",
     });
   } catch (error) {
     console.error("Submission error:", error);
-    return res.status(500).json({ error: "Failed to process submission" });
+    return res.status(500).json({ error: "Failed to process submission", details: String(error) });
   }
 }
