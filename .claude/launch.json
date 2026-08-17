@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "mediaphiles",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "mediaphiles", "run", "dev"],
+      "port": 4310
+    },
+    {
+      "name": "mediaphiles-preview",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "mediaphiles", "run", "serve"],
+      "port": 4173
+    }
+  ]
+}
