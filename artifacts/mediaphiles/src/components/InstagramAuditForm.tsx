@@ -5,6 +5,20 @@ import { z } from "zod";
 import { motion } from "framer-motion";
 import { Loader2 } from "lucide-react";
 import { BUSINESS_TYPE_OPTIONS } from "@/lib/businessTypes";
+
+// Google Form configuration
+const GOOGLE_FORM_ACTION =
+  "https://docs.google.com/forms/d/e/1FAIpQLSdHmNXLZJI7fgrb0jJ6WFxkKL_mu6JVs-miOoOq-6Evs-a3Hw/formResponse";
+
+const GOOGLE_FORM_FIELDS = {
+  name: "entry.2092238618",
+  email: "entry.1556369182",
+  phone: "entry.479301265",
+  property: "entry.1537371043",
+  location: "entry.432850524",
+  instagramUrl: "entry.1414441701",
+  businessType: "entry.114236841",
+} as const;
 import { Input } from "@/components/ui/input";
 import {
   Form,
@@ -61,19 +75,21 @@ function toPlainDigits(value: string): string {
   return value.replace(/[^\d]/g, "");
 }
 
-function submitToAPI(values: FormValues) {
-  return fetch("/api/leads/submit", {
+function submitToGoogleForm(values: FormValues) {
+  const params = new URLSearchParams();
+  params.append(GOOGLE_FORM_FIELDS.name, values.name);
+  params.append(GOOGLE_FORM_FIELDS.email, values.email);
+  params.append(GOOGLE_FORM_FIELDS.phone, toPlainDigits(values.phone));
+  params.append(GOOGLE_FORM_FIELDS.property, values.businessName);
+  params.append(GOOGLE_FORM_FIELDS.location, values.location);
+  params.append(GOOGLE_FORM_FIELDS.instagramUrl, toInstagramUrl(values.instagramUrl));
+  params.append(GOOGLE_FORM_FIELDS.businessType, businessTypeLabel(values.businessType));
+
+  return fetch(GOOGLE_FORM_ACTION, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: values.name,
-      email: values.email,
-      phone: values.phone,
-      businessName: values.businessName,
-      location: values.location,
-      instagramUrl: values.instagramUrl,
-      businessType: businessTypeLabel(values.businessType),
-    }),
+    mode: "no-cors",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: params.toString(),
   });
 }
 
@@ -97,7 +113,7 @@ export function InstagramAuditForm() {
   const onSubmit = async (values: FormValues) => {
     setSubmitting(true);
     try {
-      await submitToAPI(values);
+      await submitToGoogleForm(values);
     } catch (error) {
       console.error("Submission error:", error);
     }
